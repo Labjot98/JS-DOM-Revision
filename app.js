@@ -106,3 +106,29 @@ anotherP.innerText = "Me too";
 
 newDiv.append(newH1);
 newDiv.append(anotherP);
+
+// Create a new input and button element on the page using js only. Set the text of button to Click me
+let newInput = document.createElement("input");
+let newBtn = document.createElement("button");
+
+newInput.setAttribute("type", "text");
+newBtn.innerText = "Click Me";
+
+body.append(newInput,newBtn);
+
+// Change placeholder value of input to username and give id btn to button
+newInput.setAttribute("placeholder", "username");
+newBtn.setAttribute("id", "btn");
+
+// Access the btn using querySelector and button id. Change the button backgroud color to blue and text color to white
+// let btnSelected = document.querySelector("#btn");
+let btnSelected = document.getElementById("btn");
+btnSelected.style.backgroundColor = "blue";
+btnSelected.style.color = "white";
+
+// Create an h1 element on the page and set its text to DOM Practice underlined. Changes its color to purple
+let anotherH1 = document.createElement("h1");
+anotherH1.innerText = "DOM Practice";
+anotherH1.style.color = "purple";
+anotherH1.style.textDecoration = "underline";
+body.prepend(anotherH1);
