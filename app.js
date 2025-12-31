@@ -151,3 +151,39 @@ anotherButton.addEventListener("click", function(){
 anotherButton.addEventListener("click", function(){
     alert("You alright")
 })
+
+// Keyboard events
+let newInp = document.querySelector("#newInput");
+
+// newInp.addEventListener("keydown", function(){
+//     console.log("Key was pressed");
+// })
+
+// We can access the event object that has details about the event
+newInp.addEventListener("keypress", function(event){
+    console.log(`${event.key} was pressed. Its code was ${event.code}`)
+})
+
+// Event handling for the form
+let form = document.querySelector("form");
+let username = document.querySelector("#username");
+let password = document.querySelector("#password");
+let submitBtn = document.querySelector(".submitBtn")
+
+form.addEventListener("submit", function(event){
+    event.preventDefault();     //using the event object, we can access its properties. One of the properties is preventDefault that prevents the default behaviour of the form submission for example usually when we submit it, we get redirected to whateven url is written in action attribute. 
+
+    // To access wtv the user has typed in the input field, we use the .value property. InnerText or textContent wont work
+    let usernameInput = username.value;
+    let passwordInput = password.value;
+
+    console.log(usernameInput);
+    console.log(passwordInput);
+
+    // Another way to get the input values is direclty using the form object. It has all the values inside it.
+    console.dir(form);
+    console.log(form[0].value);
+    console.log(form[1].value);
+});
+
+
