@@ -132,3 +132,22 @@ anotherH1.innerText = "DOM Practice";
 anotherH1.style.color = "purple";
 anotherH1.style.textDecoration = "underline";
 body.prepend(anotherH1);
+
+// Event Handlers
+
+btnSelected.onclick = () => {
+    console.log("Button was clicked");
+}
+btnSelected.ondblclick = function(){
+    console.log("Button was double clicked");
+}
+
+// Event Listeners
+let anotherButton = document.querySelector("#newBtn");
+
+anotherButton.addEventListener("click", function(){
+    alert("Hello")
+});
+anotherButton.addEventListener("click", function(){
+    alert("You alright")
+})
