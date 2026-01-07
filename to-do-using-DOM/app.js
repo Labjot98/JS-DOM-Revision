@@ -13,10 +13,25 @@ button.addEventListener("click", function () {
         let listItem = document.createElement("li");
         // Setting the value of list item
         listItem.textContent = task;
+
+        // Creating a delete button
+        let deleteBtn = document.createElement("button");
+        deleteBtn.classList.add= "deleteBtn";
+        deleteBtn.textContent = "Delete";
+
         // Adding it to the list
         list.appendChild(listItem);
+        listItem.appendChild(deleteBtn);
 
         // Clearing the input field
         input.value = "";
+    }
+})
+
+// Adding the delete functionality to the parent element - Learnt event delegation topic
+list.addEventListener("click", (event) => {
+    if(event.target.nodeName == "BUTTON"){
+        let taskToDelete = event.target.parentElement;
+        taskToDelete.remove();
     }
 })
